@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Login from './components/Login';
 
-const App = () => <div> Hellowwww </div>;
+Enzyme.configure({ adapter: new Adapter() });
 
-ReactDOM.render(<App />, document.getElementById('container'));
+const Index = () => <Login />;
+
+ReactDOM.render(<Index />, document.getElementById('container'));
