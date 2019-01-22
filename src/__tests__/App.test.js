@@ -1,11 +1,7 @@
-import React from 'react';
-import { render } from 'react-testing-library';
-import Login from '../components/Login.tsx';
+import Login from '../components/Login';
 
-describe('Login', () => {
-  it('Renders with right header', () => {
-    const { queryByText } = render(<Login />);
-    const header = queryByText('Login');
-    expect(header.innerHTML).toBe('Login');
-  });
+test('Login', () => {
+  const { queryByText } = render(<Login />);
+  const header = queryByText('Login');
+  expect(header.innerHTML).toBe('Login');
 });

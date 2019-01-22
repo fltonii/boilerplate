@@ -1,15 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 
-const Login = props => {
+function Login() {
   return (
     <>
       <h1>Login</h1>
       <form>
-        <input>Email</input>
-        <input>Password</input>
+        <input />
+        <input />
       </form>
     </>
   );
-};
+}
 
 export default Login;

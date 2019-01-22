@@ -2,29 +2,29 @@ const HtmlWebPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
+  devtool: 'inline-source-map',
+  mode: 'development',
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx', '.json']
+  },
   module: {
     rules: [
       {
-        test: /\.m?tsx$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
       },
       {
-        test: /\.m?js$/,
+        test: /\.js$/,
+
         use: ['source-map-loader'],
-        enforce: 'pre',
-      },
-    ],
+        enforce: 'pre'
+      }
+    ]
   },
   plugins: [
     new HtmlWebPlugin({
       template: './public/index.html',
-      filename: 'index.html',
-    }),
-  ],
+      filename: 'index.html'
+    })
+  ]
 };
